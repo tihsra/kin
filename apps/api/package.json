@@ -1,0 +1,24 @@
+{
+  "name": "@kin/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=../../.env --watch src/server.ts",
+    "worker": "node --env-file-if-exists=../../.env src/worker.ts",
+    "db:migrate": "node --env-file-if-exists=../../.env src/migrate.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node --env-file-if-exists=../../.env dist/server.js",
+    "start:worker": "node --env-file-if-exists=../../.env dist/worker.js",
+    "db:migrate:production": "node --env-file-if-exists=../../.env dist/migrate.js"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "zod": "4.4.3",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.6"
+  }
+}
